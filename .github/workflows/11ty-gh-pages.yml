@@ -24,10 +24,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
-      - name: Install NPM dependencies
-        uses: chill-viking/npm-ci@v1.2.0
-      - name: Build Eleventy site
-        uses: TartanLlama/actions-eleventy@master
+      - uses: bahmutov/npm-install@v1
+      - run: npm run build
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v1
 
