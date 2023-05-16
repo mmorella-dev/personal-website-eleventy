@@ -1,4 +1,5 @@
 const eleventySass = require('eleventy-sass');
+const faviconsPlugin = require("eleventy-plugin-gen-favicons");
 const postcss = require("postcss");
 const cssnano = require("cssnano");
 
@@ -23,8 +24,11 @@ const seoConfig = require("./src/_data/seo.json");
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventySass, sassConfig);
   eleventyConfig.addPlugin(eleventySEO, seoConfig);
+  eleventyConfig.addPlugin(faviconsPlugin, {});
   // year shortcode
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
+  eleventyConfig.addPassthroughCopy("static");
 
   const options = {
     dir: {

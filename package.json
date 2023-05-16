@@ -18,8 +18,9 @@
     "@11ty/eleventy": "^2.0.1",
     "bootstrap": "^5.2.3",
     "cssnano": "^6.0.0",
+    "eleventy-plugin-gen-favicons": "^1.1.2",
+    "eleventy-plugin-seo": "^0.5.2",
     "eleventy-sass": "^2.2.1",
-    "postcss": "^8.4.23",
-    "eleventy-plugin-seo": "^0.5.2"
+    "postcss": "^8.4.23"
   }
 }
