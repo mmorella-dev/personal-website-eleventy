@@ -1,34 +1,18 @@
+@import "_bootstrap-custom.scss";
+@import "_stripes.scss";
 
-// Configuration
+header {
+    @extend .text-center, .my-5;
+}
 
-@import "bootstrap/scss/functions";
-// Variables
-$blue:    #90cbb2;
-$indigo:  #6610f2;
-$purple:  #6f42c1;
-$pink:    #d63384;
-$red:     #ff536b;
-$orange:  #ff904d;
-$yellow:  #ffd25b;
-$green:   #b5d455;
-$teal:    #20c997;
-$cyan:    #0dcaf0;
+/* Cool gradient border under head */
+header::after {
+    content: '';
+    display: block;
+    height: 1rem;
+    @include stripes(($color-1, $color-2, $color-3, $color-4, $color-5), to right);
+}
 
-// Variables
-@import "bootstrap/scss/variables";
-// Map overrides
-// Required parts
-@import "bootstrap/scss/maps";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/root";
-// Other utils
-@import "bootstrap/scss/utilities";
-@import "bootstrap/scss/helpers";
-@import "bootstrap/scss/reboot";
-@import "bootstrap/scss/containers";
-// @import "bootstrap/scss/alert";
-@import "bootstrap/scss/type";
-// @import "bootstrap/scss/images";
-// $enable-grid-classes: false;
-// $enable-cssgrid: true;
-// @import "bootstrap/scss/grid";
+footer {
+    @extend .border-top, .border-primary, .pt-3;
+}

@@ -8,14 +8,16 @@ tags: programmer software developer seeking employment recruiters
   {% include "head.njk" %}
 </head>
 <body>
-  <div class="container-sm py-5">
+  <div class="container-sm">
     <!-- Content wrapper -->
-    <header class="text-center">
+    <header>
         <h1>{{ seo.title }}</h1>
         <p>{{ seo.description }}</p>
     </header>
 	<main>
         {{ content | safe }}</main>
-    <script src=""></script>
+    <footer>
+      <small>&copy; {% year %} {{ seo.author }}</small>
+    </footer>
 </body>
 </html>

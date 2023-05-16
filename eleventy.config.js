@@ -9,6 +9,7 @@ const sassConfig = {
     loadPaths: ["node_modules"],
     includes: "_includes/stylesheets/",
     postcss: postcssProcessor,
+    sourceMap: true,
   }
 }
 
@@ -22,6 +23,8 @@ const seoConfig = require("./src/_data/seo.json");
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventySass, sassConfig);
   eleventyConfig.addPlugin(eleventySEO, seoConfig);
+  // year shortcode
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   const options = {
     dir: {

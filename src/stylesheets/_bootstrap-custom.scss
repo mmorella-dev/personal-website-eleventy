@@ -1,0 +1,48 @@
+// Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "bootstrap/scss/functions";
+
+// grab some nearby colors in the color wheel
+// inspired by <https://realtimecolors.com/>
+$hue: 250; // initial hue
+$shift: 30; // deg to shift by
+$saturation: 50%;
+$lightness: 60%;
+
+$color-1: hsl($hue, $saturation, $lightness);
+$color-2: hsl($hue + $shift * 1, $saturation, $lightness);
+$color-3: hsl($hue + $shift * 2, $saturation, $lightness);
+$color-4: hsl($hue + $shift * -1, $saturation, $lightness);
+$color-5: hsl($hue + $shift * -2, $saturation, $lightness);
+
+$primary: $color-1;
+$secondary: $color-2;
+$info: $color-5;
+
+$body-bg: shade-color($color-1, 85%);
+$body-color: tint-color($color-5, 70%);
+
+// Required Bootstrap stylesheets
+@import "bootstrap/scss/variables";
+
+// Include any default map overrides here
+
+
+// Include remainder of required parts
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+
+// Optional components
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/buttons";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "bootstrap/scss/utilities/api";
+
+// 8. Add additional custom code here
