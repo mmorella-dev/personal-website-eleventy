@@ -1,20 +1,27 @@
-const sass = require('eleventy-sass');
+const eleventySass = require('eleventy-sass');
 const postcss = require("postcss");
 const cssnano = require("cssnano");
 
+const postcssProcessor = postcss([cssnano]);
+
+const sassConfig = {
+  sass: {
+    loadPaths: ["node_modules"],
+    includes: "_includes/stylesheets/",
+    postcss: postcssProcessor,
+  }
+}
+
+const eleventySEO = require("eleventy-plugin-seo");
+const seoConfig = require("./src/_data/seo.json");
 /**
  * 
  * @param {*} eleventyConfig 
  * @returns 
  */
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(sass, {
-    sass: {
-      loadPaths: ["node_modules"],
-      includes: "_includes/stylesheets/"
-    },
-    postcss: postcss([cssnano])
-  });
+  eleventyConfig.addPlugin(eleventySass, sassConfig);
+  eleventyConfig.addPlugin(eleventySEO, seoConfig);
 
   const options = {
     dir: {
