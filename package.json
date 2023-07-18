@@ -16,11 +16,13 @@
   "homepage": "https://github.com/morellam-dev/portfolio-site#readme",
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "bootstrap": "^5.2.3",
+    "bootstrap": "^5.3.0",
     "cssnano": "^6.0.0",
     "eleventy-plugin-gen-favicons": "^1.1.2",
     "eleventy-plugin-seo": "^0.5.2",
     "eleventy-sass": "^2.2.1",
-    "postcss": "^8.4.23"
+    "parcel": "^2.9.3",
+    "postcss": "^8.4.23",
+    "simple-scrollspy": "^2.4.0"
   }
 }

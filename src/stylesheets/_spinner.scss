@@ -1,0 +1,66 @@
+.rotatingText {
+  height: 1.2em;
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 80%;
+  font-weight: bold;
+  border-bottom: 4px solid var(--bs-secondary-color);
+}
+
+.rotatingText-adjective {
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  opacity: 0;
+  margin: 0 auto;
+}
+
+$animation-duration: 3s;
+
+@for $i from 1 through 5 {
+  .rotatingText-adjective:nth-of-type(#{$i}) {
+    animation-name: rotate;
+    animation-duration: $animation-duration;
+    animation-delay: ($i - 1) * $animation-duration;
+    
+    &:last-of-type {
+      animation-name: rotate-last;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+$min-opacity: 10%;
+
+@keyframes rotate {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -50px, 0);
+    order: -1
+  }
+  20%, 80% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    color: var(--bs-color-success);
+  }
+  99% {
+    opacity: 0;
+    transform: translate3d(0, 25px, 0);
+    order: -1;
+  }
+  100% {
+    order: unset;
+  }
+}
+
+@keyframes rotate-last {
+  0% {
+    opacity: 0;
+    order: -1;
+    transform: translate3d(0, -50px, 0);
+  }
+  50%, 100% {
+    opacity: 1;
+    order: -1;
+    transform: translate3d(0, 0, 0);
+  }
+}

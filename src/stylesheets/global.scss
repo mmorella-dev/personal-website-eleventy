@@ -1,18 +1,31 @@
 @import "_bootstrap-custom.scss";
 @import "_stripes.scss";
+@import "_spinner.scss";
 
-header {
-    @extend .text-center, .my-5;
-}
 
-/* Cool gradient border under head */
-header::after {
-    content: '';
-    display: block;
-    height: 1rem;
-    @include stripes(($color-1, $color-2, $color-3, $color-4, $color-5), to right);
-}
 
 footer {
     @extend .border-top, .border-primary, .pt-3;
+}
+
+/* Jumbotron */
+.jumbotron {
+    @extend .display-1;
+}
+
+/* Navbar */
+.navbar-brand img {
+    height: 1em;
+    padding-right: 1rem;
+    vertical-align: baseline;
+}
+.nav-link {
+    display: inline-block;
+    color: $body-color;
+    @extend .py-3, .px-4;
+    text-decoration: none;
+}
+.nav-link.active {
+    border-bottom: 4px solid $primary;
+    color: $primary !important;
 }

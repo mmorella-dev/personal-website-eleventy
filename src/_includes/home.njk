@@ -1,6 +1,10 @@
 ---
 layout: base
 ---
-<main>
-    {{content | safe}}
-</main>
+{{content | safe}}
+{% set sections = collections.sections | reverse %}
+<div class="container-sm">
+{%- for section in sections-%}
+    {% include "section.njk" %}
+{%- endfor -%}
+</div>

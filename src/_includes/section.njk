@@ -1,0 +1,11 @@
+<section class="sub sub-{{ section.data.pageClass }} my-5" role="region" aria-labelledby="section-{{  section.data.pageClass }}">
+	<div class="section-head">
+		{%- if section.data.pageClass != "home" -%}
+		<h2 class="section-hed h1 py-2" id="section-{{ section.data.pageClass }}
+		">{{ section.data.title | safe }}</h2>
+		{%- endif -%}
+	</div>
+	<div class="section-content">
+		{{ section.data.content | safe }}
+	</div>
+</section>

@@ -15,17 +15,20 @@ $color-4: hsl($hue + $shift * -1, $saturation, $lightness);
 $color-5: hsl($hue + $shift * -2, $saturation, $lightness);
 
 $primary: $color-1;
-$secondary: $color-2;
+$secondary: $color-5;
+$success: $color-2;
+
 $info: $color-5;
+$dark: #000;
 
 $body-bg: shade-color($color-1, 85%);
 $body-color: tint-color($color-5, 70%);
 
 // Required Bootstrap stylesheets
 @import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
 
 // Include any default map overrides here
-
 
 // Include remainder of required parts
 @import "bootstrap/scss/maps";
@@ -36,11 +39,17 @@ $body-color: tint-color($color-5, 70%);
 @import "bootstrap/scss/utilities";
 @import "bootstrap/scss/reboot";
 @import "bootstrap/scss/type";
-@import "bootstrap/scss/images";
+// @import "bootstrap/scss/images";
 @import "bootstrap/scss/containers";
+
+
+$enable-grid-classes: false;
+$enable-cssgrid: true;
 @import "bootstrap/scss/grid";
 @import "bootstrap/scss/helpers";
 @import "bootstrap/scss/buttons";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/badge";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "bootstrap/scss/utilities/api";

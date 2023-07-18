@@ -4,20 +4,19 @@ tags: programmer software developer seeking employment recruiters
 ---
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
-  {% include "head.njk" %}
-</head>
-<body>
-  <div class="container-sm">
-    <!-- Content wrapper -->
+  <head>
+    {% include "head.njk" %}
+  </head>
+  <body>
     <header>
-        <h1><img width="120" src="{{ "/static/icon.svg" | url }}"><br>{{ seo.title }}</h1>
-        <p>{{ seo.description }}</p>
+      {% include "nav.njk" %}
     </header>
-	<main>
-        {{ content | safe }}</main>
+    <!-- Content wrapper -->
+    <main>
+      {{ content | safe }}</main>
     <footer>
-      <small>&copy; {% year %} {{ seo.author }}</small>
+      <small>&copy; {% year %}
+        {{ seo.author }}</small>
     </footer>
-</body>
+  </body>
 </html>
